@@ -61,6 +61,7 @@ func (g *NotifyService) Plan(ctx context.Context, param *notifier.ParamExec) err
 		ReplacedResources:      result.ReplacedResources,
 		MovedResources:         result.MovedResources,
 		ImportedResources:      result.ImportedResources,
+		TruncateComment:        true,
 	})
 	body, err := template.Execute()
 	if err != nil {

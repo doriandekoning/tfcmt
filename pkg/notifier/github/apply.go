@@ -55,6 +55,7 @@ func (g *NotifyService) Apply(ctx context.Context, param *notifier.ParamExec) er
 		UpdatedResources:       result.UpdatedResources,
 		DeletedResources:       result.DeletedResources,
 		ReplacedResources:      result.ReplacedResources,
+		TruncateComment:        true,
 	})
 	body, err := template.Execute()
 	if err != nil {

@@ -36,7 +36,7 @@ const (
 {{template "result" .}}
 
 <details><summary>Details (Click me)</summary>
-{{wrapCode .CombinedOutput}}
+{{wrapCode .CombinedOutput .TruncateComment}}
 </details>
 {{template "error_messages" .}}`
 
@@ -49,7 +49,7 @@ const (
 It failed to parse the result.
 
 <details><summary>Details (Click me)</summary>
-{{wrapCode .CombinedOutput}}
+{{wrapCode .CombinedOutput .TruncateComment}}
 </details>
 `
 
@@ -64,7 +64,7 @@ It failed to parse the result.
 It failed to parse the result.
 
 <details><summary>Details (Click me)</summary>
-{{wrapCode .CombinedOutput}}
+{{wrapCode .CombinedOutput .TruncateComment}}
 </details>
 `
 )
@@ -92,6 +92,7 @@ type CommonTemplate struct {
 	ReplacedResources      []string
 	MovedResources         []*MovedResource
 	ImportedResources      []string
+	TruncateComment        bool
 }
 
 // Template is a default template for terraform commands
@@ -142,8 +143,8 @@ func avoidHTMLEscape(text string) htmltemplate.HTML {
 	return htmltemplate.HTML(text) //nolint:gosec
 }
 
-func wrapCode(text string) interface{} {
-	if len(text) > 60000 { //nolint:mnd
+func wrapCode(text string, truncate bool) interface{} {
+	if truncate && len(text) > 60000 { //nolint:gomnd
 		text = text[:20000] + `
 
 # ...
@@ -213,6 +214,7 @@ func (t *Template) Execute() (string, error) {
 		"MovedResources":         t.MovedResources,
 		"ImportedResources":      t.ImportedResources,
 		"HasDestroy":             t.HasDestroy,
+		"TruncateComment":        t.TruncateComment,
 	}
 
 	templates := map[string]string{
@@ -250,19 +252,19 @@ This plan contains resource delete operation. Please check the plan result very 
 {{end}}`,
 		"changed_result": `{{if .ChangedResult}}
 <details><summary>Change Result (Click me)</summary>
-{{wrapCode .ChangedResult}}
+{{wrapCode .ChangedResult .TruncateComment}}
 </details>
 {{end}}`,
 		"change_outside_terraform": `{{if .ChangeOutsideTerraform}}
 <details><summary>:information_source: Objects have changed outside of Terraform</summary>
 
 _This feature was introduced from [Terraform v0.15.4](https://github.com/hashicorp/terraform/releases/tag/v0.15.4)._
-{{wrapCode .ChangeOutsideTerraform}}
+{{wrapCode .ChangeOutsideTerraform .TruncateComment}}
 </details>
 {{end}}`,
 		"warning": `{{if .Warning}}
 ## :warning: Warnings
-{{wrapCode .Warning}}
+{{wrapCode .Warning .TruncateComment}}
 {{end}}`,
 		"error_messages": `{{if .ErrorMessages}}
 ## :warning: Errors
