@@ -12,8 +12,8 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
-github.com/google/go-github/v62 v62.0.0 h1:/6mGCaRywZz9MuHyw9gD1CwsbmBX8GWsbFkwMmHdhl4=
-github.com/google/go-github/v62 v62.0.0/go.mod h1:EMxeUqGJq2xRu9DYBMwel/mr7kZrzUOfQmmpYrZn2a4=
+github.com/google/go-github/v63 v63.0.0 h1:13xwK/wk9alSokujB9lJkuzdmQuVn2QCPeck76wR3nE=
+github.com/google/go-github/v63 v63.0.0/go.mod h1:IqbcrgUmIcEaioWrGYei/09o+ge5vhffGOcxrO0AfmA=
 github.com/google/go-querystring v1.1.0 h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=
 github.com/google/go-querystring v1.1.0/go.mod h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
@@ -57,8 +57,8 @@ github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5Cc
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/suzuki-shunsuke/github-comment-metadata v0.1.0 h1:89uGvBINoWZ4p2dGj7S695bm/L1H175eMp/D47ltSPs=
 github.com/suzuki-shunsuke/github-comment-metadata v0.1.0/go.mod h1:GNDhEmWAJ6Bbk9rIds0mAMF4noyPV3EqwqLetnEoNLg=
-github.com/suzuki-shunsuke/go-ci-env/v3 v3.0.1 h1:deCm9of48iwRq0Axg3ne8mx/26h3ok9QSipt3kdM6U0=
-github.com/suzuki-shunsuke/go-ci-env/v3 v3.0.1/go.mod h1:VmLj5u0w7Yf/IJIzZ+TWiB7mVT3pRKPMeb0Jssk7YsA=
+github.com/suzuki-shunsuke/go-ci-env/v3 v3.1.0 h1:WHVT7TZTVITrKiIvW7i5+4vr8ebxD6oXGRffixIXNJU=
+github.com/suzuki-shunsuke/go-ci-env/v3 v3.1.0/go.mod h1:qnHYP5fJLLNKqOwxCfix7XVzQGfbF72vbGgLhl8X2vA=
 github.com/suzuki-shunsuke/go-findconfig v1.2.0 h1:PWHIyKZEsVmZVh6+K+rHVw0/XjTFmQEYfa8ZIzIJd0c=
 github.com/suzuki-shunsuke/go-findconfig v1.2.0/go.mod h1:lXzJUZQXrgsMmpHxXMVrWUAQpE4EopgDEJbwslvKbzs=
 github.com/suzuki-shunsuke/logrus-error v0.1.4 h1:nWo98uba1fANHdZ9Y5pJ2RKs/PpVjrLzRp5m+mRb9KE=
